@@ -51,7 +51,7 @@ public class UserService {
     // return this.userRepository.save(user);
     // }
     // return null;
-    // cách 2 tận dụng hàm fetchUserById để lấy ra user cần update
+    // cách 2 tận dụng hàm fetchUserById để lấy ra user dựa vào id cần update
     User currentUser = this.fetchUserById(reqUser.getId());
     if (currentUser != null) {
       currentUser.setName(reqUser.getName());
