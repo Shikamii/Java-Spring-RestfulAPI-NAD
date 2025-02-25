@@ -45,11 +45,6 @@ public class UserController {
     return ResponseEntity.status(HttpStatus.CREATED).body(ericUser);
   }
 
-  @ExceptionHandler(value = IdInvalidException.class)
-  public ResponseEntity<String> handleBlogAlreadyExistsException(IdInvalidException idException) {
-    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(idException.getMessage());
-  }
-
   // delete a user
   @DeleteMapping("/users/{id}")
   public ResponseEntity<String> deleteUser(@PathVariable("id") Long id) throws IdInvalidException {
